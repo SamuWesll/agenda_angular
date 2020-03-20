@@ -28,5 +28,11 @@ export class AppComponent {
       location: 'Canteen',
       description: 'Project evalutation ile declaring a variable and using an if statement is a fine way to conditionally render a component, sometimes you might want to use a'
     },
-  ]
+  ];
+
+  deleteEvent(event: any) {
+    const itemIndex = this.events.findIndex(el => el === event);
+    this.events.splice(itemIndex, 1);
+  }
+
 }

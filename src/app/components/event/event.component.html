@@ -1,7 +1,7 @@
-<!-- <div class="media mt-2">
+<div class="media mt-2">
   <h3 class="h3-responsive font-weight-bold mr-3">{{ value.time }}</h3>
   <div class="media-body mb-3">
-    <mdb-badge danger="true" class="text-center float-right">-</mdb-badge>
+    <mdb-badge (click)="handleDeleteClick()" danger="true" class="text-center float-right">-</mdb-badge>
     <h6 class="mt-0 font-weight-bold">{{ value.subject }}</h6>
     <hr class="hr-bold mb-0 my-2"/>
     <p class="mb-0">
@@ -12,15 +12,4 @@
 </div>
 <p class="p-3 blue-grey lighten-5" *ngIf="value.description">
   {{ value.description }}
-</p> -->
-
-<div *ngIf="isLogged; else loggedOut">
-  Welcome back, friend.
-</div>
-
-<ng-template #loggedOut>
-  Please friend, login.
-</ng-template>
-<p class="p-3 blue-grey lighten-5 blue-grey lighten-5" *ngIf="value.description">
-{{ value.description }}
 </p>
