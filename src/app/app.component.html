@@ -5,7 +5,7 @@
         <app-event [value]="event" (deleteEventInstanceEvent)="deleteEvent($event)"></app-event>
       </div>
       <div class="text-center">
-        <a type="button" mdbBtn color="success" (click)="frame.show()" class="waves-effect mb-4" mdbWavesEffect>Adicionar evento</a>
+        <a type="button" mdbBtn color="dark" (click)="frame.show()" class="waves-effect mb-4" mdbWavesEffect>Adicionar evento</a>
       </div>
     </div>
     <div class="col-md-4">
@@ -49,13 +49,13 @@
   style="overflow-y: auto"
 >
   <!--Dialog-->
-  <div class="modal-dialog modal-notify modal-info" role="document">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
     <!--Content-->
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header text-center">
         <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-          Schedule appointment
+          Agendar compromisso
         </h4>
         <button
           type="button"
@@ -70,7 +70,26 @@
 
       <!--Body-->
       <div class="modal-body">
-        Modal Body
+        <div class="md-form mb-5">
+          <mdb-icon far icon="clock"></mdb-icon>
+          <input type="text" id="time" class="form-control" mdbInput [formControl]="timeInput"/>
+          <label for="time">Hora</label>
+        </div>
+        <div class="md-form">
+          <mdb-icon fas icon="edit"></mdb-icon>
+          <input type="text" id="subject" class="form-control" mdbInput [formControl]="subjectInput"/>
+          <label for="subject">sujeito</label>
+        </div>
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="map"></mdb-icon>
+          <input type="text" id="location" class="form-control" mdbInput [formControl]="locationInput"/>
+          <label for="location">Localização</label>
+        </div>
+        <div class="md-form">
+          <mdb-icon fas icon="sticky-note"></mdb-icon>
+          <input type="text" id="description" class="form-control" mdbInput [formControl]="descriptionInput"/>
+          <label for="description">Descrição</label>
+        </div>
       </div>
       <!--/.Body-->
 
@@ -79,11 +98,12 @@
         <button
           type="button"
           mdbBtn
-          color="info"
+          color="dark"
+          (click)="addNewEvent()"
           class="waves-effect"
           mdbWavesEffect
         >
-          Add
+          Adicionar
         </button>
       </div>
       <!--Footer-->
